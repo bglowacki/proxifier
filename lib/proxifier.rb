@@ -1,14 +1,14 @@
 require "proxifier/version"
-require 'proxifier/downloader'
-require 'proxifier/parser'
+require 'proxifier/in_cloak/downloader'
+require 'proxifier/in_cloak/parser'
 require 'proxifier/conf_generator'
 require 'proxifier/conf_saver'
 
 module Proxifier
  class Runner
    def initialize
-     @downloader = Downloader.new
-     @parser = Parser.new
+     @downloader = InCloak::Downloader.new
+     @parser = InCloak::Parser.new
      @conf_saver = ConfSaver.new
    end
 
