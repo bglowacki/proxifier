@@ -3,10 +3,10 @@ $:.unshift File.join(File.dirname(__FILE__), "../lib")
 require 'proxifier'
 
 if ARGV[0] == "--second"
-  runner = Proxifier::Runner.new
+  puts "Gettin proxy from #{ARGV[1]}"
+  runner = Proxifier::Runner.new(ARGV[1])
   runner.call
   exit
 end
 
-puts "Calling self again..."
-system "sudo proxifier --second"
+system "sudo proxifier --second #{ARGV[0]}"

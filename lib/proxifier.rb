@@ -1,6 +1,8 @@
 require "proxifier/version"
 require 'proxifier/in_cloak/downloader'
 require 'proxifier/in_cloak/parser'
+require 'proxifier/free_proxy_list/parser'
+require 'proxifier/free_proxy_list/downloader'
 require 'proxifier/conf_generator'
 require 'proxifier/conf_saver'
 
@@ -10,6 +12,9 @@ module Proxifier
       if proxy_source == "InCloak"
         @downloader = InCloak::Downloader.new
         @parser = InCloak::Parser.new
+      else
+        @downloader = FreeProxyList::Downloader.new
+        @parser = FreeProxyList::Parser.new
       end
       @conf_saver = ConfSaver.new
     end
@@ -22,6 +27,3 @@ module Proxifier
     end
   end
 end
-
-runner = Proxifier::Runner.new
-runner.call
