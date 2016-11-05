@@ -11,7 +11,7 @@ module Proxifier
           if cells.count > 0
             ip = cells[0].text
             port = cells[1].text
-            type = "HTTPS"
+            type = "HTTP"
             Proxy.new(type, ip, port).to_s
           end
         end.compact
