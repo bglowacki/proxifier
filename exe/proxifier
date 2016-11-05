@@ -5,6 +5,7 @@ require 'proxifier'
 if ARGV[0] == "--second"
   runner = Proxifier::Runner.new
   runner.call
+  exit
 end
 
 puts "Calling self again..."
