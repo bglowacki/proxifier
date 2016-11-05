@@ -1,11 +1,10 @@
 require 'erb'
-
 module Proxifier
   class ConfGenerator
     include ERB::Util
 
     def initialize(proxies, template="proxychains.conf.erb")
-      @template_content = File.read(File.join(".." ,"templates", template))
+      @template_content = File.read(File.join(File.dirname(__FILE__), "../../templates", template))
       @proxies = proxies
     end
 
