@@ -58,7 +58,7 @@ tcp_connect_time_out 8000
 #        ( auth types supported: "basic"-http  "user/pass"-socks )
 #
 [ProxyList]
-  <%=@proxies.join("\n  ")%>
+<%=@proxies.join("\n")%>
 # add proxy here ...
 # meanwile
 # defaults set to "tor"
