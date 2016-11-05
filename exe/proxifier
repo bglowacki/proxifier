@@ -8,4 +8,4 @@ if ARGV[0] == "--second"
 end
 
 puts "Calling self again..."
-system "sudo ./bin/proxifier --second"
+system "sudo proxifier --second"
